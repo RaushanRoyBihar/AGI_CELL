@@ -1,0 +1,14 @@
+machine_brain
+Copyright the project author.
+
+This product includes data derived from the author's own prior work:
+
+  - src/machine_brain/sutraflow/data/maheshvara_shiva_sutras.json
+  - src/machine_brain/sutraflow/data/ashtadhyayi_legacy_executable_seed.json
+
+  Originally from the author's earlier "vajra-v0.39-UNIFIED" project archive
+  (vajra/sutras/). See docs/provenance/NOTES.md for the full accounting of
+  what was reused verbatim, what was reimplemented from scratch, and why.
+
+This product includes no third-party code or data outside the author's own
+prior work referenced above.

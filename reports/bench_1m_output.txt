@@ -1,0 +1,11 @@
+frames: 1000000
+elapsed_seconds: 1821.5250352500007
+throughput_fps: 548.9905330138666
+p50_cycle_ms: 5.485833011334762
+p95_cycle_ms: 23.9913749974221
+p99_cycle_ms: 40.877874998841435
+peak_rss_mb: 47.25
+disk_bytes_per_frame: 479.904874
+audit_chain_valid: True
+episodes_recorded: 149998
+graph_edges: 749976

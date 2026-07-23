@@ -1,0 +1,284 @@
+{
+  "rules": [
+    {
+      "id": "PANI-6.1.87",
+      "canonical_id": "6.1.87",
+      "name": "a/ā + i/ī → e",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "a/ā + i/ī → e (Guṇa sandhi)",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-6.1.88",
+      "canonical_id": "6.1.88",
+      "name": "a/ā + u/ū → o",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "a/ā + u/ū → o (Guṇa sandhi)",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-6.1.89",
+      "canonical_id": "6.1.89",
+      "name": "a/ā + e/ai → ai",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "a/ā + e/ai → ai (Vṛddhi sandhi)",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-6.1.101",
+      "canonical_id": "6.1.101",
+      "name": "a + a → ā",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "a + a → ā (vowel coalescence)",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-6.1.77",
+      "canonical_id": "6.1.77",
+      "name": "ik + aC → yaṇ",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "ik + aC → yaṇ (i/u/ṛ before vowel)",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-8.3.15",
+      "canonical_id": "8.3.15",
+      "name": "Visarga before voiced sound transformation guard",
+      "family": "sandhi",
+      "domain": "sandhi",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Visarga before voiced sound transformation guard",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-2.1.22",
+      "canonical_id": "2.1.22",
+      "name": "Tatpuruṣa compound marker",
+      "family": "samasa",
+      "domain": "samasa",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Tatpuruṣa compound marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-2.2.23",
+      "canonical_id": "2.2.23",
+      "name": "Bahuvrīhi compound marker",
+      "family": "samasa",
+      "domain": "samasa",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Bahuvrīhi compound marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-3.1.68",
+      "canonical_id": "3.1.68",
+      "name": "Kartari śap pratyaya marker",
+      "family": "pratyaya",
+      "domain": "pratyaya",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Kartari śap pratyaya marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-3.4.78",
+      "canonical_id": "3.4.78",
+      "name": "Tip / third-person singular marker",
+      "family": "pratyaya",
+      "domain": "pratyaya",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Tip / third-person singular marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-1.4.49",
+      "canonical_id": "1.4.49",
+      "name": "Kartā semantic role marker",
+      "family": "karaka",
+      "domain": "karaka",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Kartā semantic role marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-1.4.50",
+      "canonical_id": "1.4.50",
+      "name": "Karma semantic role marker",
+      "family": "karaka",
+      "domain": "karaka",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Karma semantic role marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-1.1.1",
+      "canonical_id": "1.1.1",
+      "name": "Vṛddhi definition marker",
+      "family": "meta",
+      "domain": "meta",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Vṛddhi definition marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    },
+    {
+      "id": "PANI-1.1.2",
+      "canonical_id": "1.1.2",
+      "name": "Guṇa definition marker",
+      "family": "meta",
+      "domain": "meta",
+      "source_tradition": "panini-ashtadhyayi-seed",
+      "priority": 60,
+      "confidence_weight": 0.25,
+      "description": "Guṇa definition marker",
+      "scope": "string_or_evidence_block",
+      "condition": {
+        "seed_mapping": "legacy_l3_rules"
+      },
+      "operation": {
+        "normalize_or_mark": true
+      },
+      "executable": true,
+      "status": "legacy_seed_restored"
+    }
+  ]
+}

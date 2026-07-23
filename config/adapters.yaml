@@ -1,0 +1,34 @@
+# Optional adapter selection. Every key below defaults to the local/free
+# implementation that requires no external service. Flipping a value to a
+# non-"local" option requires the matching extra (pyproject.toml
+# [project.optional-dependencies]) and a running external service.
+#
+# Deleting this file entirely, or leaving everything at its default, must
+# leave the system fully functional on RAM + SQLite + MCAP alone.
+
+associative: local        # local | qdrant
+graph: sqlite              # sqlite | neo4j
+telemetry: sqlite           # sqlite | clickhouse
+artifacts: local_file        # local_file | minio
+fleet_sync: local_sqlite      # local_sqlite | postgres
+
+qdrant:
+  url: "http://localhost:6333"
+  collection: "machine_brain_associative"
+
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "changeme"
+
+clickhouse:
+  dsn: "clickhouse://localhost:9000/default"
+
+minio:
+  endpoint: "localhost:9000"
+  bucket: "machine-brain-artifacts"
+  access_key: "changeme"
+  secret_key: "changeme"
+
+postgres:
+  dsn: "postgresql://localhost:5432/machine_brain"

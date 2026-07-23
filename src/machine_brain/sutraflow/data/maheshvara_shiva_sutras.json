@@ -1,0 +1,284 @@
+{
+  "rules": [
+    {
+      "id": "MS-01",
+      "name": "Māheśvara Śiva Sūtra 01",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "a i u ṇ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "a i u ṇ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-02",
+      "name": "Māheśvara Śiva Sūtra 02",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ṛ ḷ k",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ṛ ḷ k"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-03",
+      "name": "Māheśvara Śiva Sūtra 03",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "e o ṅ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "e o ṅ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-04",
+      "name": "Māheśvara Śiva Sūtra 04",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ai au c",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ai au c"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-05",
+      "name": "Māheśvara Śiva Sūtra 05",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ha ya va ra ṭ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ha ya va ra ṭ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-06",
+      "name": "Māheśvara Śiva Sūtra 06",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "la ṇ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "la ṇ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-07",
+      "name": "Māheśvara Śiva Sūtra 07",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ña ma ṅa ṇa na m",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ña ma ṅa ṇa na m"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-08",
+      "name": "Māheśvara Śiva Sūtra 08",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "jha bha ñ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "jha bha ñ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-09",
+      "name": "Māheśvara Śiva Sūtra 09",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "gha ḍha dha ṣ",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "gha ḍha dha ṣ"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-10",
+      "name": "Māheśvara Śiva Sūtra 10",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ja ba ga ḍa da ś",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ja ba ga ḍa da ś"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-11",
+      "name": "Māheśvara Śiva Sūtra 11",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "kha pha cha ṭha tha ca ṭa ta v",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "kha pha cha ṭha tha ca ṭa ta v"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-12",
+      "name": "Māheśvara Śiva Sūtra 12",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ka pa y",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ka pa y"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-13",
+      "name": "Māheśvara Śiva Sūtra 13",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "śa ṣa sa r",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "śa ṣa sa r"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    },
+    {
+      "id": "MS-14",
+      "name": "Māheśvara Śiva Sūtra 14",
+      "family": "phonetic_pratyahara",
+      "domain": "acoustic",
+      "source_tradition": "maheshvara/shiva-sutra",
+      "priority": 55,
+      "confidence_weight": 0.2,
+      "description": "Phonetic pratyāhāra inventory used for deterministic acoustic grouping.",
+      "sutra_text": "ha l",
+      "scope": "phonetic_inventory",
+      "condition": {
+        "phonetic_inventory": "ha l"
+      },
+      "operation": {
+        "classify_sound_group": true
+      },
+      "executable": true,
+      "status": "active_phonetic_inventory"
+    }
+  ]
+}
