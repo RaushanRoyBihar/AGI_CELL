@@ -37,8 +37,13 @@ actually read and verify yourself instead of taking on faith.
   managed hosting) — built as a separate add-on, not part of the open-source core.
 - **Support contracts** for teams that need a guaranteed response time, not best-effort.
 
-Interested in any of the above? Open an issue on this repo or reach out — *(add your contact email
-or a link to your landing page here once you tell me what to use)*.
+Interested in any of the above? Open an issue on this repo, or reach out directly:
+
+- **Email:** raushanraj1112@gmail.com
+- **Phone:** +91-9241386853 · +91-7004478802
+- **Other work:** [PAIL Evidence Runtime](https://ancient-intelligence-lab.kakarotvira06.workers.dev/)
+  — a deterministic evidence-verification checkpoint for RAG pipelines (checks retrieved evidence
+  actually supports an answer before it reaches an LLM), also built by the same author.
 
 ## Try it in a few minutes
 
