@@ -1,14 +1,108 @@
-# machine_brain
+# AGI_CELL
 
-A bounded cognitive runtime: RAM + SQLite + MCAP is the floor everything else is optional adapters
-on top of. See `00_ARCHIVE_ANALYSIS/` and `01_ARCHITECTURE/` for the design docs this was built
-from, and `docs/provenance/NOTES.md` for an honest account of what came from the donor archives
-versus what's original to this build.
+### A safety-first "brain" for robots and AI agents — free and open source to run yourself; paid only if you want it built into your own product.
 
-Licensed under [Apache 2.0](LICENSE). See [`NOTICE`](NOTICE) for the provenance of the two Sanskrit
-sutra data files this project reuses from the author's own prior work.
+[![License: AGPL v3](https://img.shields.io/badge/license-AGPLv3-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 
-## Quick start
+## In plain terms
+
+If you're building a robot, or any AI system that takes real actions in the real world, the hard
+problem isn't making it smart — it's making sure it never does anything dangerous, and being able
+to prove, after the fact, exactly why it did what it did. AGI_CELL is a **decision-making core**
+that sits between "the AI wants to do X" and "X actually happens": it checks every single proposed
+action against hard safety rules that nothing — not even its own learning — can override, and it
+keeps a permanent, tamper-evident log of every decision, allowed or refused.
+
+Think of it as a flight recorder plus a safety brake, for robots and AI agents, that you can
+actually read and verify yourself instead of taking on faith.
+
+## What you get for free
+
+- **The entire thing.** Full source code, nothing hidden, nothing crippled. Run it on your own
+  machine, forever, for free — that's what open source (AGPLv3, see [Licensing](#licensing) below)
+  means here.
+- A working robot "brain": perception, memory, planning, and a safety layer that's been
+  deliberately attacked (property-based fuzzing) to try to break it — and did, a few times. Those
+  bugs and fixes are documented, not hidden — see [`docs/provenance/NOTES.md`](docs/provenance/NOTES.md).
+- Real 3D physics simulation (Google DeepMind's MuJoCo), and an optional small local AI assistant
+  that understands plain-English instructions like *"watch human-1 from about 2 meters away."*
+- Everything is tested (100+ automated tests) and benchmarked against real numbers, not
+  marketing claims — see [Measured, not claimed](#measured-not-claimed).
+
+## What's paid
+
+- **Custom integration** — connecting this into your actual robot, product, or business systems.
+- **Enterprise features** (fleet management for many robots at once, compliance dashboards,
+  managed hosting) — built as a separate add-on, not part of the open-source core.
+- **Support contracts** for teams that need a guaranteed response time, not best-effort.
+
+Interested in any of the above? Open an issue on this repo or reach out — *(add your contact email
+or a link to your landing page here once you tell me what to use)*.
+
+## Try it in a few minutes
+
+**With Docker** (nothing to install locally — build once, run):
+```bash
+docker build -t agi_cell .
+docker run agi_cell
+```
+*(Wraps the exact same install-and-run steps below in a standard Python container.)*
+
+**Without Docker:**
+```bash
+python3 -m pip install -e .
+python3 demo_run.py --frames 2000 --fresh
+```
+You'll see real output: how fast it processed simulated sensor data, how many decisions it made,
+and confirmation that its audit trail is intact and untampered.
+
+**Talk to it in plain English** (optional, downloads a small ~470MB AI model, runs entirely on
+your own machine — no API key, no cloud):
+```bash
+python3 -m pip install -e ".[llm]"
+mkdir -p models && curl -L -o models/qwen2.5-0.5b-instruct-q4_k_m.gguf \
+  https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf
+python3 agi_demo.py --cycles 900 --fresh --instruction "Watch human-1 from about 2 meters away"
+```
+
+## Licensing
+
+AGI_CELL is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)** — see
+[`LICENSE`](LICENSE). In plain terms: you can use, run, and modify this freely, including
+commercially. The one thing AGPLv3 requires that a plainer license wouldn't: if you take this,
+modify it, and offer it to others as a hosted service over a network, you must also publish your
+modifications under AGPLv3. It does not let someone take this code, host it, and sell it as a
+closed competing product without contributing back — that protection is the whole reason for this
+specific license (the same reason Grafana, MongoDB, and several other open-source companies use a
+similar approach).
+
+---
+
+## For engineers: full technical detail
+
+Everything below is unchanged, exact, and verifiable against the code and tests in this repo — the
+section above is the front door; this is the actual documentation.
+
+### What actually runs today
+
+The full cognitive data flow is wired end to end and tested:
+
+```
+sensors/operator input -> ObservationFrame -> ring buffer (Layer 1) -> perception/feature
+extraction -> working memory (Layer 3, SQLite WAL) -> attention selection -> episodic recall
+(Layer 4) + associative candidates (Layer 5) + graph hints (Layer 6) -> JEPA surprise score
+(Layer 9) -> planner proposal -> SutraFlow validation -> safety governor -> simulated action
+-> observed outcome -> reviewed (Samskara) learning -> graph/procedural consolidation
+```
+
+Every guarded decision (SutraFlow AND safety governor, allow or refuse) is written to a
+hash-chained audit ledger (Layer 11) before anything executes. Duplicate frames are rejected at
+ingest. Repeated execution of the same skill over the same MCAP offset range does not create a
+duplicate episode. Contradictory observations of the same entity create an unresolved
+contradiction rather than silently picking a side.
+
+### Full command reference
 
 ```bash
 python3 -m pip install -e .
@@ -33,7 +127,7 @@ python3 scripts/generate_okf_bundle.py
 python3 examples/okf_context_experiment.py
 ```
 
-## World model / "basic AGI" layer
+### World model / "basic AGI" layer
 
 On top of the Phase 1-9 loop, `planner/imagination.py` + `world_model/dynamics.py` turn the
 reactive planner into a model-based agent:
@@ -60,7 +154,6 @@ reactive planner into a model-based agent:
   collects training data on the alternatives it keeps skipping. `ImaginationConfig.exploration_epsilon`
   (default 0.15) fixes this by occasionally proposing a non-optimal candidate — still fully guarded,
   never a bypass.
-
 - **Real 2D spatial world** (`simulate/world.py`): the robot and every entity have actual (x, y)
   positions; sensed "distance" is genuine Euclidean distance, not an asserted scalar. Executing
   `approach_target` really does turn the robot toward its target and close the distance;
@@ -106,7 +199,7 @@ real transitions (only ~15 touching `approach_target`) may simply not have conve
 action→goal-distance signal yet. Worth a closer look (more training data, a larger network, or
 curriculum-style targeted data collection) before trusting this planner beyond a demo.
 
-## Real Pāṇinian phonology (first literal donor-code integration)
+### Real Pāṇinian phonology (first literal donor-code integration)
 
 `sutraflow/panini_phonology.py` is the first place actual donor **files** were used, not just
 donor *concepts*. Two JSON files were copied verbatim from `vajra-v0.39-UNIFIED` — the real 14
@@ -123,25 +216,7 @@ citations, and using them would have meant presenting synthetic content as authe
 accounting in `docs/provenance/NOTES.md`. Not yet wired into the active SutraFlow guard rule set —
 a real, tested capability sitting next to the guard layer, not inside it yet.
 
-## What actually runs today
-
-The full cognitive data flow from the spec is wired end to end and tested:
-
-```
-sensors/operator input -> ObservationFrame -> ring buffer (Layer 1) -> perception/feature
-extraction -> working memory (Layer 3, SQLite WAL) -> attention selection -> episodic recall
-(Layer 4) + associative candidates (Layer 5) + graph hints (Layer 6) -> JEPA surprise score
-(Layer 9) -> planner proposal -> SutraFlow validation -> safety governor -> simulated action
--> observed outcome -> reviewed (Samskara) learning -> graph/procedural consolidation
-```
-
-Every guarded decision (SutraFlow AND safety governor, allow or refuse) is written to a
-hash-chained audit ledger (Layer 11) before anything executes. Duplicate frames are rejected at
-ingest. Repeated execution of the same skill over the same MCAP offset range does not create a
-duplicate episode. Contradictory observations of the same entity create an unresolved
-contradiction rather than silently picking a side.
-
-## SutraFlow's guard logic is literally built from two Aṣṭādhyāyī sutras
+### SutraFlow's guard logic is literally built from two Aṣṭādhyāyī sutras
 
 `src/machine_brain/sutraflow/rules.py` resolves conflicts between matching guard rules using:
 
@@ -155,7 +230,7 @@ pūrvatrāsiddham): the safety governor is treated as the "inner" rule, already 
 REFUSE unconditionally overrides a SutraFlow ALLOW — never the reverse. See `safety/governor.py`'s
 docstring.
 
-## Layer -> module map
+### Layer -> module map
 
 | Spec layer | Module | Default backing | Optional adapter |
 |---|---|---|---|
@@ -180,7 +255,7 @@ raises a clear `RuntimeError` (not a silent failure) if selected without the dep
 `config/adapters.yaml` defaults every adapter to its local implementation — delete the file and
 the system still runs.
 
-## Measured, not claimed
+### Measured, not claimed
 
 - **100,000-frame benchmark** (`tests/benchmarks/bench_throughput.py`): 1,303 frames/sec,
   p50 3.4ms / p95 4.8ms / p99 16.4ms cycle latency, ~48MB peak RSS, ~675 bytes/frame on disk,
@@ -190,7 +265,7 @@ the system still runs.
   world model did *not* beat the trivial static (last-value) baseline after 150 training steps.
   Preserved and reported rather than hidden, per spec.
 
-## What's simulated, not real hardware/services
+### What's simulated, not real hardware/services
 
 - No ROS2/DDS — `InProcessBus` stands in.
 - No physical reservoir — `SimulatedReservoir` (random-projection leaky integrator) stands in.
@@ -198,8 +273,11 @@ the system still runs.
 - Qdrant/Neo4j/ClickHouse/MinIO/PostgreSQL are not installed in this environment; their adapters
   are written and interface-complete but untested against real running services.
 - No real hardware at all — `simulate/mujoco_world.py` is real physics, but a simulation.
+- The `Dockerfile` in this repo wraps the exact install/run steps verified throughout development,
+  but the Docker build itself was not run in the environment this was built in (no Docker daemon
+  available there) — verify it locally before relying on it, and open an issue if it doesn't work.
 
-## Real 3D physics (MuJoCo) and a small local LLM
+### Real 3D physics (MuJoCo) and a small local LLM
 
 Two optional adapters, both genuinely real, both CPU-only:
 
@@ -228,7 +306,7 @@ target*, never bypasses SutraFlow or the safety governor, which see the resultin
 like any other. Run `python agi_demo.py --instruction "..."` to see both the success and rejection
 paths live.
 
-## Google's Open Knowledge Format (OKF) — measured, not just wired in
+### Google's Open Knowledge Format (OKF) — measured, not just wired in
 
 Google Cloud launched OKF (a vendor-neutral spec for packaging curated knowledge as markdown +
 YAML frontmatter, explicit relationships instead of vector-similarity guessing — spec fetched

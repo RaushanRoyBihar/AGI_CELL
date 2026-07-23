@@ -1,5 +1,9 @@
-machine_brain
-Copyright the project author.
+AGI_CELL (machine_brain)
+Copyright (C) 2026 Raushan Roy
+
+Licensed under the GNU Affero General Public License v3.0 (AGPLv3). See LICENSE.
+Relicensed from Apache 2.0 to AGPLv3 on 2026-07-23, before any external forks or
+stars existed on the public repository.
 
 This product includes data derived from the author's own prior work:
 
